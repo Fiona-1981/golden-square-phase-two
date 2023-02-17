@@ -16,4 +16,14 @@
 # Should they return with or without "..." ?
 # Example such as "Get out of here!" would return "Get out of here!..."
 # Doesn't make sense.
-# Decided on <= 5 and > 5 for now.
+# Decided on <= 5 and > 5 for now. Or maybe just no punctuation. Keep it simple.
+
+require 'make_snippet'
+
+RSpec.describe Snippet do
+  it "returns first 5 words plus '...' if longer than 5 words" do
+  snippet = Snippet.new
+  snippet.counts(snippet.length == > 5)
+  expect(snippet.sentence).to eq "I got up and had..."
+  end
+end
