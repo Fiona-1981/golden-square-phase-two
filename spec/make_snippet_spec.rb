@@ -18,12 +18,11 @@
 # Doesn't make sense.
 # Decided on <= 5 and > 5 for now. Or maybe just no punctuation. Keep it simple.
 
-require 'make_snippet'
+require "make_snippet"
 
-RSpec.describe Snippet do
-  it "returns first 5 words plus '...' if longer than 5 words" do
-  snippet = Snippet.new
-  snippet.counts(snippet.length == > 5)
-  expect(snippet.sentence).to eq "I got up and had..."
-  end
+RSpec.describe "make_snippet method" do
+  it "returns an empty string if an empty string is input" do
+    result = make_snippet("")
+    expect(result).to eq ""
+  end  
 end
