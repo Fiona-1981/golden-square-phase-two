@@ -25,4 +25,16 @@ RSpec.describe "make_snippet method" do
     result = make_snippet("")
     expect(result).to eq ""
   end  
+
+  it "returns self if number of word is from 1 to 5" do
+    # choose some random numbers here
+    # Only test one thing per test
+    result = make_snippet("i am quite tired")
+    expect(result).to eq "i am quite tired"
+  end
+
+  it "returns '...' after the fifth word if more than five words" do
+    result = make_snippet("Have a restful weekend away from your screen")
+    expect(result).to eq "Have a restful weekend away..."
+  end
 end
