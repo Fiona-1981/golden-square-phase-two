@@ -3,8 +3,7 @@
 ## 1. Describe the Problem
 
 _Put or write the user story here. Add any clarifying notes you might have._
-_
-As a user
+_As a user
 So that I can keep track of my tasks
 I want to check if a text includes the string #TODO._
 
@@ -12,17 +11,19 @@ I want to check if a text includes the string #TODO._
 
 _Include the name of the method, its parameters, return value, and side effects._
 
-
 ```ruby
 # EXAMPLE
 check_todo(text)
+return value will be boolean
+
+todo_checked = an array
+
 
 # `extract_upper` extracts uppercase words from a string
-extracted_sentences = check_todo(text)
-# uppercase_words = extract_uppercase(mixed_words)
+uppercase_words = extract_uppercase(mixed_words)
 
-# mixed_words: a string (e.g. "hello WORLD")
-# uppercase_words: a list of strings (e.g. ["WORLD"])
+mixed_words: a string (e.g. "hello WORLD")
+uppercase_words: a list of strings (e.g. ["WORLD"])
 
 # The method doesn't print anything or have any other side-effects
 ```
@@ -34,25 +35,24 @@ _Make a list of examples of what the method will take and return._
 ```ruby
 # EXAMPLE
 
-#extract_uppercase("hello WORLD") => ["WORLD"]
-#extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
-#extract_uppercase("hello world") => []
-#extract_uppercase("hello WoRLD") => []
-#extract_uppercase("hello WORLD!") => ["WORLD"]
-#extract_uppercase("") => []
-#extract_uppercase(nil) throws an error
+extract_uppercase("hello WORLD") => ["WORLD"]
+extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
+extract_uppercase("hello world") => []
+extract_uppercase("hello WoRLD") => []
+extract_uppercase("hello WORLD!") => ["WORLD"]
+extract_uppercase("") => []
+extract_uppercase(nil) throws an error
 ```
-extracted_sentences("") => []
-extracted_sentences("TODO take the bins out.") => ["take the bins out"]
-extracted_sentences("had a nice coffee.") => []
-extracted_sentences("TODO clean the wash basin. Had a nice breakfast") => ["clean the wash basin"]
+
+check_todo("") => false
+check_todo("I love coffee") => false
+check_todo("TODO top up the bird feeder") => true
+# check_todo("") => false
 
 
 _Encode each example as a test. You can add to the above list as you go._
 
 ## 4. Implement the Behaviour
-
-Writing my method.
 
 _After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
 
