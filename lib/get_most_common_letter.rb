@@ -8,12 +8,16 @@ def get_most_common_letter(text)
   text.chars.each do |char|
 
    counter[char] += 1
-   #p counter
+   # p counter
 
   end
 
   # p counter.to_a.sort_by { |k, v| v }[0][0]
-  p counter.to_a.sort_by { |k, v| v }[8]
+
+  p counter.to_a.sort_by { |k, v| k }[8][0]
+  # It was the "k" in line 16 after the pipes!
+
+  # .sort_by { |k, v| v }[8][0]
   # [8][0]
 
 end
