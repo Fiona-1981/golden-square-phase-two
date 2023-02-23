@@ -26,7 +26,7 @@ class GrammarStats
   def percentage_good
     fail "Nothing has been entered." if @check == 0
     # Returns as an integer the percentage of texts checked so far that passed
-    # the check defined in the `check` method. The number 55 represents 55%.
+    # the check defined in the `check` method. The number 55 represents 55%.  
     
     return ((@true.to_f / @check) * 100).to_i
   end
