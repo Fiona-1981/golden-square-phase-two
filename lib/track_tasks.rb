@@ -1,14 +1,19 @@
 class TrackTasks
 
   def initialize
+    @tasks = []
   end
 
-  def add (task)
+  def add(task)
+    @tasks << task
   end
 
   def list
+    return @tasks
   end
 
-  def done (task)
+  def done(task)
+    fail "No such task." unless @tasks.include? task
+    @tasks.delete(task)
   end
 end

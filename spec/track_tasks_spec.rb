@@ -9,7 +9,7 @@ RSpec.describe TrackTasks do
     end
 
     context "given one task" do
-      xit "has a single item in list" do
+      it "has a single item in list" do
         track_tasks = TrackTasks.new
         track_tasks.add("Take out the bins")
         expect(track_tasks.list).to eq ["Take out the bins"]
@@ -17,8 +17,9 @@ RSpec.describe TrackTasks do
     end
 
     context "given multiple tasks" do
-      xit "has a multiple items in list" do
+      it "has a multiple items in list" do
         track_tasks = TrackTasks.new
+        track_tasks.add("Take out the bins")
         track_tasks.add("Clean the sink")
         track_tasks.add("Do the vacuuming")
         expect(track_tasks.list).to eq ["Take out the bins", "Clean the sink", "Do the vacuuming"]
@@ -26,7 +27,7 @@ RSpec.describe TrackTasks do
     end
 
     context "task completed" do
-      xit "removes a task from the list" do
+      it "removes a task from the list" do
         track_tasks = TrackTasks.new
         track_tasks.add("Take out the bins")
         track_tasks.add("Clean the sink")
@@ -37,10 +38,11 @@ RSpec.describe TrackTasks do
     end
 
     context "try to complete non existent task" do
-      xit "fails" do
+      it "fails" do
         track_tasks = TrackTasks.new
-        track_tasks.done("Wash the dog")
-        expect(track_tasks.list).to fail
+        track_tasks.add("Clean the sink")
+        expect { track_tasks.done("Wash the dog") }.to raise_error "No such task."
+        track_tasks.list # fails
       end
     end
   end
